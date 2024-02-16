@@ -1,17 +1,19 @@
 <template>
-  <GreetComponent name="Neel" heroName="Joshi" />
-  <GreetComponent :name="name" :heroName="channel" />
-  <GreetComponent name="Rahul" />
-  <GreetComponent name="Keyur" />
+  <!-- <GreetComponent name="Neel" heroName="Joshi" />
+  <GreetComponent :name="name" :heroName="channel" /> -->
+  <ArticleComponent title="Article Title" :likes="50" :isPublished="true" />
 </template>
 
 <script>
-import GreetComponent from "./components/Greet";
+// import GreetComponent from "./components/Greet";
+import ArticleComponent from './components/Article';
 
 export default {
   name: 'App',
   components: {
-    GreetComponent,
+    // GreetComponent,
+    ArticleComponent,
+
   },
   data() {
     return {
