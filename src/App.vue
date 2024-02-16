@@ -1,26 +1,21 @@
 <template>
-  <button @click="showPopup = true">Show Popup</button>
-  <Popup v-show="showPopup" @close="closePopup" />
+  <Input v-model="name" />
 </template>
 
 <script>
-import Popup from './components/Popup';
+import Input from './components/Input.vue';
 
 export default {
   name: 'App',
   components: {
-    Popup,
+    Input,
   },
   data() {
     return {
-      showPopup: false
+      name: ''
     }
   },
-  methods:{
-    closePopup(name){
-      this.showPopup = false
-      console.log('name', name);
-    }
+  methods: {
   }
 }
 </script>
@@ -34,4 +29,6 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+@import "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css";
 </style>
