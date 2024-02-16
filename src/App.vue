@@ -1,7 +1,8 @@
 <template>
   <!-- <GreetComponent name="Neel" heroName="Joshi" />
   <GreetComponent :name="name" :heroName="channel" /> -->
-  <ArticleComponent title="Article Title" :likes="50" :isPublished="true" />
+
+  <ArticleComponent id="myArticle" title="Article Title" :likes="50" :isPublished="true" />
 </template>
 
 <script>
