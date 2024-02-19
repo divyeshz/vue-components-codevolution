@@ -1,10 +1,21 @@
 <template>
-  <CardComponent></CardComponent>
   <CardComponent>Card content</CardComponent>
   <CardComponent>
     <h2>Card content</h2>
   </CardComponent>
   <CardComponent> <img src="https://picsum.photos/200" alt=""> </CardComponent>
+
+  <CardComponent>
+    <template v-slot:header>
+      <h3>Header</h3>
+    </template>
+    <template v-slot:default>
+      <img src="https://picsum.photos/200" alt="">
+    </template>
+    <template v-slot:footer>
+      <button class="btn btn-dark">View Details</button>
+    </template>
+  </CardComponent>
 </template>
 
 <script>
