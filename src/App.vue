@@ -1,20 +1,30 @@
 <template>
-  <h4>App component text</h4>
-  <ChildStyles>
-    <h4>ChildStyle component text</h4>
-  </ChildStyles>
+  <button @click="activeTab = 'TabA'">Tab A</button>
+  <button @click="activeTab = 'TabB'">Tab B</button>
+  <button @click="activeTab = 'TabC'">Tab C</button>
+
+  <component :is="activeTab"></component>
+
+  <!-- <TabA v-if="activeTab === 'TabA'" />
+  <TabB v-if="activeTab === 'TabB'"/>
+  <TabC v-if="activeTab === 'TabC'"/> -->
 </template>
 
 <script>
-import ChildStyles from "./components/ChildStyles.vue";
+import TabA from "./components/TabA";
+import TabB from "./components/TabB";
+import TabC from "./components/TabC";
 
 export default {
   name: 'App',
   components: {
-    ChildStyles
+    TabA,
+    TabB,
+    TabC
   },
   data() {
     return {
+      activeTab: 'TabA',
     }
   },
   methods: {
@@ -22,7 +32,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -31,10 +41,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-
-h4 {
-  color: orange
-}
-
-@import "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css";
 </style>
