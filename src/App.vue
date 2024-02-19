@@ -1,37 +1,20 @@
 <template>
-  <NameListComponent>
-    <template v-slot:default="slotProps">
-      {{ slotProps.firstName }}
-      {{ slotProps.lastName }}
-    </template>
-  </NameListComponent>
-  <hr>
-  <NameListComponent>
-    <template v-slot:default="slotProps">
-      {{ slotProps.lastName }}
-      {{ slotProps.firstName }}
-    </template>
-  </NameListComponent>
-
-  <hr>
-  <NameListComponent>
-    <template v-slot:default="slotProps">
-      {{ slotProps.firstName }}
-    </template>
-  </NameListComponent>
+  <h4>App component text</h4>
+  <ChildStyles>
+    <h4>ChildStyle component text</h4>
+  </ChildStyles>
 </template>
 
 <script>
-import NameListComponent from "./components/NameList";
+import ChildStyles from "./components/ChildStyles.vue";
 
 export default {
   name: 'App',
   components: {
-    NameListComponent
+    ChildStyles
   },
   data() {
     return {
-
     }
   },
   methods: {
@@ -39,7 +22,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -47,6 +30,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+h4 {
+  color: orange
 }
 
 @import "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css";
