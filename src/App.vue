@@ -3,7 +3,9 @@
   <button @click="activeTab = 'TabB'">Tab B</button>
   <button @click="activeTab = 'TabC'">Tab C</button>
 
-  <component :is="activeTab"></component>
+  <keep-alive>
+    <component :is="activeTab"></component>
+  </keep-alive>
 
   <!-- <TabA v-if="activeTab === 'TabA'" />
   <TabB v-if="activeTab === 'TabB'"/>
